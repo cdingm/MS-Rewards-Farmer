@@ -3,7 +3,7 @@ import logging
 import random
 from pathlib import Path
 from types import TracebackType
-from typing import Any, Type, NamedTuple
+from typing import Any, NamedTuple, Type
 
 import ipapi
 import seleniumwire.undetected_chromedriver as webdriver
@@ -208,17 +208,8 @@ class Browser:
 
     @staticmethod
     def getCCodeLang(lang: str, geo: str) -> tuple:
-        if lang is None or geo is None:
-            try:
-                nfo = ipapi.location()
-            except RateLimited:
-                logging.warning("Returning default", exc_info=True)
-                return "en", "US"
-            if isinstance(nfo, dict):
-                if lang is None:
-                    lang = nfo["languages"].split(",")[0].split("-")[0]
-                if geo is None:
-                    geo = nfo["country"]
+        lang = "de"
+        geo = "DE"
         return lang, geo
 
     @staticmethod

@@ -17,9 +17,19 @@
       "type": "python",
       "request": "launch",
       "program": "main.py",
-      "args": ["-v"],
+      "args": [
+        "-v"
+      ],
       "console": "integratedTerminal",
       "justMyCode": true
-    }
+    },
+    {
+      "name": "test",
+      "type": "python",
+      "request": "launch",
+      "program": "test.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
   ]
 }
